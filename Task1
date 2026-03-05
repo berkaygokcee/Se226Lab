@@ -1,0 +1,15 @@
+number = int(input("Plesa enter a num greater than 1"))
+print("Girdiğin sayı :" ,number)
+
+steps = 0
+
+print(number,end="")
+for i in range(number):
+    if i %2 ==0:
+        number = number /2
+    else :
+        number = (number * 3) + 1
+        steps += 1
+        print("->",number,end="")
+
+        print("\n total numbers : ", steps)
