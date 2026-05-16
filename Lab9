@@ -1,0 +1,23 @@
+int LEDs[] = {46,47,48,49};
+int buttons[] = {41,40,39,38};
+
+bool state[4]={0,0,0,0};
+
+void setup() {
+for (int i=0;i<4;i++){
+pinMode(LEDs[i],OUTPUT);
+pinMode(buttons[i],INPUT);
+ }
+}
+
+void loop(){
+  for (int i=0;i<4;i++){
+if(digitalRead(buttons[i]) == HIGH){
+delay(100);
+state[i] = !state[i];
+digitalWrite(LEDs[i],state[i]);
+
+while(digitalRead(buttons[i]) == HIGH);
+ }
+}
+}
